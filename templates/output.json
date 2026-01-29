@@ -1,0 +1,43 @@
+{
+  "skill": {
+    "name": "",
+    "version": "1.0.0",
+    "description": "",
+    "metadata": {
+      "author": "",
+      "created": "",
+      "updated": "",
+      "category": "",
+      "tags": [],
+      "license": "MIT"
+    },
+    "content": {
+      "overview": "",
+      "when_to_use": [],
+      "instructions": [
+        {
+          "step": 1,
+          "title": "",
+          "description": "",
+          "details": []
+        }
+      ],
+      "examples": [
+        {
+          "title": "",
+          "input": "",
+          "output": "",
+          "explanation": ""
+        }
+      ],
+      "best_practices": [],
+      "error_handling": {
+        "common_errors": [],
+        "fallback_strategy": []
+      },
+      "security_considerations": [],
+      "limitations": [],
+      "related_skills": []
+    }
+  }
+}

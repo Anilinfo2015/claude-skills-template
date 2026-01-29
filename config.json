@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claude Skills Configuration",
+  "description": "Configuration schema for Claude Skills template",
+  "type": "object",
+  "properties": {
+    "skills_directory": {
+      "type": "string",
+      "description": "Base directory for skills",
+      "default": "./skills"
+    },
+    "templates_directory": {
+      "type": "string",
+      "description": "Directory for skill templates",
+      "default": "./templates"
+    },
+    "examples_directory": {
+      "type": "string",
+      "description": "Directory for example skills",
+      "default": "./examples"
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "require_frontmatter": {
+          "type": "boolean",
+          "description": "Require YAML frontmatter in all skills",
+          "default": true
+        },
+        "required_fields": {
+          "type": "array",
+          "description": "Required fields in skill frontmatter",
+          "items": {
+            "type": "string"
+          },
+          "default": ["name", "version", "description"]
+        },
+        "naming_pattern": {
+          "type": "string",
+          "description": "Regex pattern for skill names",
+          "default": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "version_pattern": {
+          "type": "string",
+          "description": "Regex pattern for semantic versioning",
+          "default": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "default_license": {
+          "type": "string",
+          "description": "Default license for new skills",
+          "default": "MIT"
+        },
+        "default_author": {
+          "type": "string",
+          "description": "Default author name",
+          "default": ""
+        },
+        "allowed_categories": {
+          "type": "array",
+          "description": "Allowed skill categories",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "development",
+            "documentation",
+            "testing",
+            "analysis",
+            "automation",
+            "review",
+            "utility"
+          ]
+        },
+        "allowed_maturity_levels": {
+          "type": "array",
+          "description": "Allowed maturity levels",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "experimental",
+            "stable",
+            "deprecated"
+          ]
+        },
+        "allowed_complexity_levels": {
+          "type": "array",
+          "description": "Allowed complexity levels",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "enable_categorization": {
+          "type": "boolean",
+          "description": "Organize skills by category",
+          "default": true
+        },
+        "enable_tagging": {
+          "type": "boolean",
+          "description": "Enable skill tagging",
+          "default": true
+        },
+        "min_tags": {
+          "type": "number",
+          "description": "Minimum number of tags per skill",
+          "default": 2
+        },
+        "max_tags": {
+          "type": "number",
+          "description": "Maximum number of tags per skill",
+          "default": 5
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "scan_for_secrets": {
+          "type": "boolean",
+          "description": "Scan skills for hardcoded secrets",
+          "default": true
+        },
+        "require_security_review": {
+          "type": "boolean",
+          "description": "Require security review for all skills",
+          "default": false
+        },
+        "allowed_external_domains": {
+          "type": "array",
+          "description": "Whitelist of allowed external domains",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "documentation": {
+      "type": "object",
+      "properties": {
+        "require_examples": {
+          "type": "boolean",
+          "description": "Require at least one example",
+          "default": true
+        },
+        "min_examples": {
+          "type": "number",
+          "description": "Minimum number of examples",
+          "default": 2
+        },
+        "require_best_practices": {
+          "type": "boolean",
+          "description": "Require best practices section",
+          "default": false
+        },
+        "require_error_handling": {
+          "type": "boolean",
+          "description": "Require error handling section",
+          "default": false
+        }
+      }
+    },
+    "versioning": {
+      "type": "object",
+      "properties": {
+        "use_semantic_versioning": {
+          "type": "boolean",
+          "description": "Enforce semantic versioning",
+          "default": true
+        },
+        "track_version_history": {
+          "type": "boolean",
+          "description": "Require version history section",
+          "default": false
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["markdown", "json", "yaml"],
+          "description": "Output format for generated files",
+          "default": "markdown"
+        },
+        "include_metadata": {
+          "type": "boolean",
+          "description": "Include metadata in output",
+          "default": true
+        },
+        "pretty_print": {
+          "type": "boolean",
+          "description": "Pretty print output",
+          "default": true
+        }
+      }
+    }
+  }
+}
