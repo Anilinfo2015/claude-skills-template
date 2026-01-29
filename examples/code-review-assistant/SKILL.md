@@ -706,7 +706,7 @@ This is slow and should be optimized.
 - [ ] Error conditions tested
 - [ ] Tests are maintainable
 
-## Feedback Examples
+## Examples
 
 ### Security Issue
 
